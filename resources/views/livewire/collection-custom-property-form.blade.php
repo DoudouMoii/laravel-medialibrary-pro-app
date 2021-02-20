@@ -15,6 +15,7 @@
                     name="images"
                     :model="$formSubmission"
                     collection="images"
+                    :editableName="false"
                     fields-view="livewire.partials.custom-properties"
                 />
             </x-field>
