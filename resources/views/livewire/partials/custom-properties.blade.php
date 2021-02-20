@@ -15,3 +15,19 @@
         </span>
     @enderror
 </div>
+
+<div class="media-library-field">
+    <label class="media-library-label">Extra field 2</label>
+    <input
+        dusk="media-library-extra-field"
+        class="media-library-input"
+        type="text"
+        {{ $mediaItem->livewireCustomPropertyAttributes('extra_field2') }}
+    />
+
+    @error($mediaItem->customPropertyErrorName('extra_field2'))
+    <span class="media-library-text-error">
+               {{ $message }}
+        </span>
+    @enderror
+</div>

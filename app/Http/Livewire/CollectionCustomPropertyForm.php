@@ -33,7 +33,8 @@ class CollectionCustomPropertyForm extends Component
     {
         $this->validate([
             'images.*.name' => 'required',
-            'images.*.custom_properties.extra_field' => 'required',
+            'images.*.custom_properties.extra_field' => 'nullable',
+            'images.*.custom_properties.extra_field2' => 'nullable',
         ], ['required' => 'This field is required']);
 
         $this->formSubmission->save();
@@ -41,7 +42,7 @@ class CollectionCustomPropertyForm extends Component
         $this
             ->formSubmission
             ->syncFromMediaLibraryRequest($this->images)
-            ->withCustomProperties('extra_field')
+            ->withCustomProperties('extra_field', 'extra_field2')
             ->toMediaCollection('images');
 
         $this->message = 'Your form has been submitted';
